@@ -1,7 +1,6 @@
 function [sensor_location, is_magnetometer, is_gradiometer_x, is_gradiometer_y] = getSensorsData()
 
-s = RandStream('mt19937ar','Seed',1);
-[sensor_index, sensor_x, sensor_y]  = textread('data/Vectorview-all.lout', '%f %f %f %*f %*f %*s', 'headerlines',1,'whitespace','\t');
+[sensor_index, sensor_x, sensor_y]  = textread('Vectorview-all.lout', '%f %f %f %*f %*f %*s', 'headerlines',1,'whitespace','\t');
 
 sensor_location = [sensor_x, sensor_y];
 
