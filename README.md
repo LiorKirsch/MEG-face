@@ -1,5 +1,5 @@
 ----------------------------------------
-Data:
+#### Data:
 
 
 Vectorview-all.lout:
@@ -7,9 +7,11 @@ Contains data regarding the sensors (squids): Their (x,y) location and their typ
 
 
 ----------------------------------------
-Functions:
+#### Functions:
 
-src_infrastructure:
+###### src_infrastructure:
+
+
 	getSensorData - 
 	         reads the Vectorview file and outputs the sensor type and location (x,y)
 
@@ -23,7 +25,9 @@ src_infrastructure:
 
 
 
-src_feature_creation:
+###### src_feature_creation:
+
+
 	[sensor_in_pyramid_group, groupedTogether] = createSpatialPyramid(sensor_location, number_of_groups_in_lower_level) - 
 	 groups together spatially neighboring sensors and repeat this using larger group (until all channels are in one group)
 
@@ -32,7 +36,9 @@ src_feature_creation:
 
 
 
-src_classification:
+###### src_classification:
+
+
 	do_online_classification - 
 	       uses VW (online classifier) to classify the data. First it scrambels the order then it writes the data in VW format to a temp file and runs VW.
 
@@ -59,18 +65,17 @@ src_classification:
 	       for each group it scales all the group samples using only data from the samples of the group
 
 
+###### Other:
 
-mainClassification - 
-           Loads the samples and does classifcation using five folds
+	mainClassification - 
+	     Loads the samples and does classifcation using five folds
 
-mainChannelClassification - 
-	   Split the data into the different channels than for each channel it tries to perform classifcation indepentently.
+	mainChannelClassification - 
+	     Split the data into the different channels than for each channel it tries to perform classifcation indepentently.
 
+	divideToPreAndPostStimulus - 
+	     divides the timeseries into pre and post stimulus
 
-
-divideToPreAndPostStimulus - 
- divides the timeseries into pre and post stimulus
-
-dataMatrix = normalizeTrailPriorToStimulus(preStimulsData,postStimulsData) -
- normalize each trail using the prestimulus mean and std (zero mean, unit std)
+	dataMatrix = normalizeTrailPriorToStimulus(preStimulsData,postStimulsData) -
+	     normalize each trail using the prestimulus mean and std (zero mean, unit std)
 
