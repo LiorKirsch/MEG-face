@@ -1,11 +1,8 @@
-function [classification, test_decision_values] = lib_svm_classification(train_data, train_labels, test_data, test_labels)
+function [classification, test_decision_values] = lib_svm_classification(train_data, train_labels, test_data, test_labels, C)
     addpath('/home/lab/lior/Projects/general use functions/libsvm-mat-3.0-1');
-
-    C = 1;
-    g = 1;
+%     addpath('/home/lab/lior/Projects/general use functions/libsvm-dense-3.18/matlab/');
     
-    %   ====== RBF ======
-%     svmOptions = sprintf('-w1 1 -w0 %g -c %g -g %g', newPenelty, C ,g);
+%     C = 1;
     
     %   ==== linear ====
     svmOptions = sprintf('-c %g -t 0 -q',  C); 

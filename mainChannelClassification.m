@@ -28,8 +28,8 @@ function mainChannelClassification()
     
     foldAcc = nan(num_channels,number_of_folds);
 
-    C = exp(-3:6);
-    G = exp(-3:6);
+    C = exp(-1:4);
+    G = exp(-8:-4);
     [C,G] = meshgrid(C,G);
     C = C(:); G = G(:);
     

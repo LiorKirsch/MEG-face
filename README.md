@@ -1,3 +1,9 @@
+This project aims to classify between two brain signals: a face and a scrambled face.
+The signals are collected using a MEG with 306 channels.
+The classification is across people - trails of a single person cannot be both in the train set and in the test set.
+
+
+
 ----------------------------------------
 #### Data:
 

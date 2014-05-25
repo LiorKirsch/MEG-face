@@ -1,5 +1,8 @@
 data
+features
+vwTemp
 *~
 *.mat
 *.vw
 *.cache
+*.csv
